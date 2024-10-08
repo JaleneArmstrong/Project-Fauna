@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>Forums • Fauna</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+ <link href="forumstyle.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+  <nav>
+    <div class="container">
+      <h2 class="log">
+        Fauna
+      </h2>
+      <div class="search-bar">
+        <i class="uil uil-search"></i>
+        <input type="search" placeholder="Search for your beloved animals">
+      </div>
+      <button class="btn btn-primary" id="sign-out-button">Sign Out</button>
+    </div>
+  </nav>
+
+  <!---------------------------- MAIN -------------------->
+  <main>
+    <div class="container">
+      <!------------ LEFT -------------->
+      <div class="left">
+        <a class="profile">
+          Discussion Forums
+        </a>
+
+        <!---------------------- SIDEBAR ------------------>
+        <div class="sidebar">
+   <a href="../home.html" class="menu-item">
+            <span><i class="uil uil-house-user"></i></span>
+            <h3>Home</h3>
+          </a>
+
+          <a class="menu-item">
+            <span><i class="uil uil-compass"></i></span>
+            <h3>Explore</h3>
+          </a>
+
+          <a class="menu-item" id="notifications">
+            <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span>
+            <h3>Notifications</h3>
+            <!------------- NOTIFICATIONS POPUP ---------------->
+            <div class="notifications-popup">
+              <div>
+                <div class="profile-photo">
+                  <img
+                    src="https://2img.net/h/lh3.ggpht.com/_S0f-AWxKVdM/TByTpLKmRbI/AAAAAAAAMlo/vqnGXwjWHT0/pikachuy.png">
+                </div>
+                <div class="notification-body">
+                  <b>Fauna</b> sent you a welcome message!
+                  <small class="text-muted">JUST NOW</small>
+                </div>
+              </div>
+              <div>
+                <div class="profile-photo">
+                  <img
+                    src="https://2img.net/h/lh3.ggpht.com/_S0f-AWxKVdM/TByTpLKmRbI/AAAAAAAAMlo/vqnGXwjWHT0/pikachuy.png">
+                </div>
+                <div class="notification-body">
+                  <b>azeemtherott</b> added to their story!
+                  <small class="text-muted"> JUST NOW</small>
+                </div>
+              </div>
+              <div>
+                <div class="profile-photo">
+                  <img
+                    src="https://2img.net/h/lh3.ggpht.com/_S0f-AWxKVdM/TByTpLKmRbI/AAAAAAAAMlo/vqnGXwjWHT0/pikachuy.png">
+                </div>
+                <div class="notification-body">
+                  <b>azeemtherott</b> followed you!
+                  <small class="text-muted"> JUST NOW</small>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!------------- NOTIFICATIONS POPUP END ---------------->
+          <a href="forum.html" class="menu-item active">
+            <span><i class="uil uil-comment-alt-dots"></i></span>
+            <h3>Discussions</h3>
+          </a>
+
+          <a class="menu-item" id="messages-notifications">
+            <span><i class="uil uil-envelope-alt"><small class="notification-count">5</small></i></span>
+            <h3>Messages</h3>
+          </a>
+
+          <a class="menu-item" id="theme">
+            <span><i class="uil uil-palette"></i></span>
+            <h3>Theme</h3>
+          </a>
+
+          <a class="menu-item">
+            <span><i class="uil uil-setting"></i></span>
+            <h3>Settings</h3>
+          </a>
+        </div>
+        <!--------------- END OF SIDEBAR --------------------->
+        <label for="create-post" class="btn btn-primary">Create Post</label>
+      </div>
+
+      <!------------ MIDDLE -------------->
+      <div class="middle">
+        <form id="message-form">
+          <div class="form-group">
+            <input type="text" id="title-input" name="title-input" placeholder="Add a title">
+          </div>
+          <div class="form-group">
+            <textarea id="message-input" name="message-input" placeholder="Type your message here..." rows="10"
+              cols="90"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send</button>
+        </form>
+        <div id="message-container"></div>
+      </div>
+      <!------------ RIGHT -------------->
+      <div class="right">
+        <div class="hashtags">
+          <div class="heading">
+            <h4>Popular Hashtags</h4>
+            <i class="uil uil-filter"></i>
+          </div>
+          <!---------- SEARCH BAR --------------->
+          <div class="search-bar">
+            <i class="uil uil-search-alt"></i>
+            <input type="search" placeholder="Search hashtags" id="hashtag-search">
+          </div>
+          <!--------------------- HASHTAGS CATEGORY ---------------->
+          <!--- wanted to use an animal API to generate this, but couldn't find any that either didn't require a token or didn't offer simple name display -->
+          <div class="categories">
+            <div class="category">
+              <h6 class="active" data-category="mammals">Mammals</h6>
+              <h6 data-category="birds">Birds</h6>
+              <h6 data-category="reptiles">Insects</h6>
+            </div>
+            <div class="hashtag-container mammals">
+              <div class="hashtag active" data-category="mammals">
+                <p>#Dogs</p>
+              </div>
+              <div class="hashtag active" data-category="mammals">
+                <p>#Cats</p>
+              </div>
+              <div class="hashtag active" data-category="mammals">
+                <p>#Guniea Pigs</p>
+              </div>
+              <div class="hashtag active" data-category="mammals">
+                <p>#Rabbits</p>
+              </div>
+              <div class="hashtag active" data-category="mammals">
+                <p>#Hamsters</p>
+              </div>
+              <div class="hashtag active" data-category="mammals">
+                <p>#Ferrets</p>
+              </div>
+              <div class="hashtag active" data-category="mammals">
+                <p>#Hedgehogs</p>
+              </div>
+              <div class="hashtag active" data-category="mammals">
+                <p>#Squirrels</p>
+              </div>
+            </div>
+
+            <div class="hashtag-container birds">
+              <div class="hashtag" data-category="birds">
+                <p>#Ducks</p>
+              </div>
+              <div class="hashtag" data-category="birds">
+                <p>#Cockatiels</p>
+              </div>
+              <div class="hashtag" data-category="birds">
+                <p>#Macaws</p>
+              </div>
+              <div class="hashtag" data-category="birds">
+                <p>#Finches</p>
+              </div>
+              <div class="hashtag" data-category="birds">
+                <p>#Pigeons</p>
+              </div>
+              <div class="hashtag" data-category="birds">
+                <p>#Cockatoos</p>
+              </div>
+              <div class="hashtag" data-category="birds">
+                <p>#Chickens</p>
+              </div>
+              <div class="hashtag" data-category="birds">
+                <p>#Budgerigars</p>
+              </div>
+            </div>
+
+            <div class="hashtag-container reptiles">
+              <div class="hashtag" data-category="reptiles">
+                <p>#Beetles</p>
+              </div>
+              <div class="hashtag" data-category="reptiles">
+                <p>#Scorpions</p>
+              </div>
+              <div class="hashtag" data-category="reptiles">
+                <p>#Ladybugs</p>
+              </div>
+              <div class="hashtag" data-category="reptiles">
+                <p>#Centipedes</p>
+              </div>
+              <div class="hashtag" data-category="reptiles">
+                <p>#Tarantula Spiders</p>
+              </div>
+              <div class="hashtag" data-category="reptiles">
+                <p>#Praying Mantises</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!--------------- THEME CUSTOMIZATION -------------------------->
+  <div class="customize-theme">
+    <div class="card">
+      <h2>Purrfect Your View</h2>
+      <p class="text-muted">Manage your font size, colour, and background.</p>
+
+      <!--------------------- FONT SIZES ------------------------->
+      <div class="font-size">
+        <h4>Font Size</h4>
+        <div>
+          <h6>Aa</h6>
+          <div class="choose-size">
+            <span class="font-size-1"></span>
+            <span class="font-size-2"></span>
+            <span class="font-size-3 active"></span>
+            <span class="font-size-4"></span>
+            <span class="font-size-5"></span>
+          </div>
+          <h3>Aa</h3>
+        </div>
+      </div>
+
+      <!----------------PRIMARY COLOURS -------------------->
+      <div class="colour">
+        <h4>Colour</h4>
+        <div class="choose-colour">
+          <span class="colour-1 active"></span>
+          <span class="colour-2"></span>
+          <span class="colour-3"></span>
+          <span class="colour-4"></span>
+          <span class="colour-5"></span>
+        </div>
+      </div>
+
+      <!-------------- BACKGROUND COLOURS ----------------->
+      <div class="background">
+        <h4>Background</h4>
+        <div class="choose-bg">
+          <div class="bg-1 active">
+            <span></span>
+            <h5 for="bg-1">Light</h5>
+          </div>
+
+          <div class="bg-2">
+            <span></span>
+            <h5>Dim</h5>
+          </div>
+
+          <div class="bg-3">
+            <span></span>
+            <h5 for="bg-3">Lights Out</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="forumscript.js"></script>
+</body>
+
+</html>
